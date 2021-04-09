@@ -1,0 +1,27 @@
+{{define "content"}}
+<div class="todo-app" style="overflow: hidden;">
+	<div class="todo-header">
+		<div class="username">{{.Name}}</div>
+		<div class="appname"><h1>Todo</h1></div>
+		<div class="todos-tool">
+			<p class="create-btn"><a href="/todos/new">+ Create</a></p>
+			<label class="name-label">Name</label>
+		</div>
+	</div>
+	<div class="contents">
+		<div class="ctnt-elements" style="overflow: scroll;">
+		{{ range .Todos }}
+			<div class="ctnt">
+				<label>{{ .Content }}</label>
+				<div class="UD-btn">
+					<p class="todo-btns edit-btn"><a href="/todos/edit/{{.ID}}">Edit</a></p>
+					<p class="todo-btns delete-btn"><a href="/todos/delete/{{.ID}}">Delete</a></p>
+				</div>
+				<hr>
+			</div>
+		{{end}}
+		</div>
+	</div>
+</div>
+
+{{end}}

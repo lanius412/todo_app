@@ -1,0 +1,25 @@
+{{define "content"}}
+<h1 class="text-center">Join Todo</h1>
+
+<form class="form-signin" role="form" action="/signup" method="post">
+	<div class="form-link">
+		<p>
+			Already have an account?
+			<a class="form-link" href="/login">Login</a>
+		</p>
+	</div>
+	<div>
+		<div style="text-align:left;">
+			<label>Email address</label>
+			<input type="email" name="email" class="form-control" required autofocus>
+			<br/>
+			<label style="text-align:left;">Username</label>
+			<input id="name" type="text" name="name" class="form-control" required>
+			<br/>
+			<label style="text-align:left;">Password</label>
+			<input type="password" name="password" class="form-control" required>
+		</div>
+		<button class="btn btn-lg btn-primary btn-block bg-dark border-dark" type="submit">Join</button>
+	</div>
+</form>
+{{end}}

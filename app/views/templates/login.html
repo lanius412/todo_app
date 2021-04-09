@@ -1,0 +1,24 @@
+{{define "content"}}
+<h1 class="text-center">Login</h1>
+<form class="form-signin center" role="form" action="/authenticate" method="post">
+	<div>
+		<p>Welcome Todo.</p>
+	</div>
+	<div>
+		<div style="text-align: left;">
+			<label>Email</label>
+			<input type="email" name="email" class="form-control" placeholder="Email" required autofocus>
+			<br/>
+			<label>Password</label>
+			<input type="password" name="password" class="form-control" placeholder="Password" required>
+		</div>
+		<button class="btn btn-lg btn-primary btn-block bg-dark border-dark" type="submit">Login</button>
+	</div>
+	<div class="form-link" style="text-align: center;">
+		<br/>
+		<p>
+			Don't have an account?
+			<a href="/signup">Join</a>
+	</div>
+</form>
+{{end}}
