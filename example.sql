@@ -21,7 +21,6 @@ create table sessions (
 
 create table todos (
 	id			serial primary key,
-	uuid		varchar(64) not null unique,
 	content		text,
 	user_id		integer references users(id),
 	created_at	timestamp not null
