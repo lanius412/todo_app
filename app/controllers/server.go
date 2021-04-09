@@ -37,7 +37,6 @@ var validPath = regexp.MustCompile("^/todos/(edit|update|delete)/([0-9]+)")
 
 func parseURL(fn func(http.ResponseWriter, *http.Request, int)) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		// /todos/edit/1
 		q := validPath.FindStringSubmatch(r.URL.Path)
 		if q == nil {
 			http.NotFound(w, r)
@@ -66,6 +65,7 @@ func StartMainServer() (err error) {
 	http.HandleFunc("/todos/new", todoNew)
 	http.HandleFunc("/todos/save", todoSave)
 	http.HandleFunc("/todos/edit/", parseURL(todoEdit))
+	http.HandleFunc("/todos/update/", parseURL(todoUpdate))
 	http.HandleFunc("/todos/delete/", parseURL(todoDelete))
 
 	port := os.Getenv("PORT")
